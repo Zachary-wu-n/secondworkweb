@@ -1,0 +1,268 @@
+﻿@charset "utf-8";
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+    Tutorial 2
+    Case Problem 4
+    
+    The Great Lakescape Lodge
+    Author: Wuxiao
+    Date:   9th September 2025
+   
+   The Great Lakescape Lodge Layout Styles
+   Filename: lake_layout.css
+
+*/
+
+
+/* Structural Styles */
+@font-face {
+  font-family:'adss';
+  src: url(DobkinPlain.ttf); /* Define custom font adss */
+}
+
+@font-face {
+  font-family:'abss';
+  src: url(cac_champagne.ttf); /* Define custom font abss */
+}
+
+.articles-grid {
+   display: grid;
+   grid-template-columns: 3fr 1fr; /* Grid layout with 3:1 ratio */
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* Two equal columns */
+	grid-template-rows: auto 1fr; /* Auto and equal height rows */
+	align-items: start; /* Align items to top */
+	grid-template-areas:"header header" "article-left article-right"; /* Grid area definitions */
+}
+
+.page-header { grid-area: header; } /* Header area */
+.article-left { grid-area: article-left; } /* Left article area */
+.article-right { grid-area: article-right; } /* Right article area */
+
+.page-header {
+    grid-column: 1 / -1; /* Header spans all columns */
+}
+
+.article-right {
+	background-color: #623265; /* Purple background */
+	width: 100%;
+	padding-top: 1%; /* Top padding */
+    padding-bottom: 101%; /* Bottom padding */
+	color: #ffffff; /* White text */
+}
+
+.flex-layout {
+    display: flex;
+    flex-direction: column; /* Vertical layout */
+    gap: 30px; /* Gap between elements */
+    margin-bottom: 60px;
+}
+
+.flex-header {
+    text-align: center; /* Center aligned */
+    padding: 30px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.flex-articles {
+    display: flex;
+    gap: 30px; /* Gap between articles */
+}
+
+.flex-article {
+    background: rgb(0, 0, 0); /* Black background */
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.fir, .sec, .thi {
+	font-family:abss; /* Use custom font */
+	color: #ffffff; /* White text */
+	font-size: 35px; /* Font size */
+	padding-left: 5%; /* Left padding */
+}
+
+.box-model {
+	margin-top:  px; /* Top margin */
+	margin-bottom: 10px; /* Bottom margin */
+	margin-left: 70px; /* Left margin */
+	width: 250px; /* Fixed width */
+	height: 500px; /* Fixed height */
+	background-color: blueviolet; /* Background color */
+}
+
+body {
+	margin: 0 auto; /* Center horizontally */
+	width: 100%; /* Full width */
+	max-width: 1020px; /* Maximum width */
+	min-width: 640px; /* Minimum width */
+}
+
+/* Image styles */
+body > header > img {
+	width: 100%; /* Full width */
+	display: block; /* Block display */
+	margin: 0; /* No margin */
+}
+
+/* Left column layout */
+body > section#leftcol {
+	width: 70%; /* 70% width */
+	float: left; /* Float left */
+	margin-left: 0%; /* Left margin */
+	margin-right: 4%; /* Right margin */
+}
+
+/* Paragraph styles */
+body > section#leftcol p {
+	margin-left: 2%; /* Left margin */
+	margin-right: 1%; /* Right margin */
+}
+
+body > section#leftcol d {
+	margin-left: -1%; /* Negative left margin */
+}
+
+/* Right column layout */
+body > section#rightcol {
+	width: 24%; /* 24% width */
+	float: left; /* Float left */
+	margin-right: 2%; /* Right margin */
+}
+
+/* Blockquote quote styles */
+blockquote::before {
+	content: open-quote; /* Opening quote */
+	font-size: 2em; /* Font size */
+	color: #c289dd; /* Purple color */
+	font-family: "Georgia", serif; /* Font family */
+}
+
+blockquote::after {
+	content: close-quote; /* Closing quote */
+	font-size: 2em; /* Font size */
+	color: #c289dd; /* Purple color */
+	font-family: "Georgia", serif; /* Font family */
+}
+
+/* Blockquote styles */
+body>section#col>blockquote {
+	color: #c289dd; /* Purple text */
+	font-family: "Georgia", serif; /* Font family */
+    font-size: 20px; /* Font size */
+}
+
+footer {
+	clear: both; /* Clear floats */
+}
+
+/* Global box-sizing */
+address, article, aside, blockquote, body, cite, 
+div, dl, dt, dd, em, figcaption, figure, footer, 
+h1, h2, h3, h4, h5, h6, header, html, img, 
+li, main, nav, ol, p, section, span, ul {
+   -webkit-box-sizing: border-box; /* Webkit box model */
+   -moz-box-sizing: border-box; /* Firefox box model */
+   box-sizing: border-box; /* Standard box model */
+}
+
+/* Navigation styles */
+header > nav {
+	display: table; /* Table layout */
+	width: 100%; /* Full width */
+	background-color: rgb(118, 65, 130); /* Background color */
+}
+
+header > nav > ul {
+	display: table-row; /* Table row */
+	list-style-type: none; /* Remove list style */
+}
+
+header > nav > ul > li {
+	display: table-cell; /* Table cell */
+	text-align: center; /* Center text */
+}
+
+header > nav a {
+	display: block; /* Block display */
+	width: 100%; /* Full width */
+}
+
+/* Sidebar layout */
+section#leftcol aside {
+	width: 42%; /* 42% width */
+	float: left; /* Float left */
+	margin-left: 2.5%; /* Left margin */
+	margin-right: 2.5%; /* Right margin */
+	margin-bottom: 20px; /* Bottom margin */
+}
+
+/* Navigation list styles */
+section#col nav ul {
+	list-style-type: none; /* Remove list style */
+}
+
+section#col nav a {
+	color: #9e92a3; /* Text color */
+	text-decoration: none; /* Remove underline */
+}
+
+/* Left column styles */
+section#leftcol {
+	color:rgb(255, 255, 255); /* White text */
+	background-color:rgb(0, 0, 0); /* Black background */
+}
+
+section#leftcol img {
+	width: 100%; /* Full width */
+	display: block; /* Block display */
+}
+
+h1 {
+	text-align: center; /* Center aligned */
+}
+
+/* Left column container */
+#lefcol {
+	background-color: rgb(225, 121, 151); /* Background color */
+	width: 10px; /* Fixed width */
+    padding: 5px; /* Padding */
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Right column container */
+#rightcol {
+	background-color: rgb(205, 199, 53); /* Background color */
+	width: 30px; /* Fixed width */
+    padding: 20px; /* Padding */
+    margin: 2px; /* Margin */
+}
+
+/* Link color */
+section#leftcol aside a {
+    color: rgb(243, 148, 254); /* Link color */
+}
+
+/* Navigation link styles */
+header#titlesix nav a {
+	color: rgb(233, 189, 238); /* Text color */
+	text-decoration: none; /* Remove underline */
+}
+
+/* Footer styles */
+.last {
+	color: #ffffff; /* White text */
+	background-color: #424242; /* Background color */
+	text-align: center; /* Center aligned */
+}
+
+/* Welcome text styles */
+.wel {
+	font-family: abss; /* Custom font */
+	font-size: 30px; /* Font size */
+	padding-left: 2%; /* Left padding */
+}
